@@ -11,13 +11,11 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors({
-  origin: '*'              
-}));
+app.use(cors())
 app.use(express.json());
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/todoapp', {
+mongoose.connect(process.env.MONGODB_URI , {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
